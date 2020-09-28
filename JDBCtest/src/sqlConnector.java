@@ -28,51 +28,62 @@ public class sqlConnector {
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        Connection conn = null;
-        String url = "jdbc:mysql://localhost:3306/sys?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        String user = "root";
-        /**
-         * INSERT YOUR PASSWORD
-         * FOR YOUR LOCAL MACHINE
-         * BELOW (String password:)
-         */
-        String password = "";
-        Scanner userName = new Scanner(System.in);
-        System.out.println("Enter Username:");
-        String username = userName.nextLine();
-        Scanner passWord = new Scanner(System.in);
-        System.out.println("Enter Password:");
-        String pass = passWord.nextLine();
-        Scanner firstName = new Scanner(System.in);
-        System.out.println("Enter First Name:");
-        String fName = firstName.nextLine();
-        Scanner lastName = new Scanner(System.in);
-        System.out.println("Enter Last Name:");
-        String lName = lastName.nextLine();
-        Scanner emailladdress = new Scanner(System.in);
-        System.out.println("Enter Email Address:");
-        String email = emailladdress.nextLine();
+        int tries = 0;
+        int maxTries = 3;
+        while(true) {
+            Connection conn = null;
+            String url = "jdbc:mysql://localhost:3306/sys?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            String user = "root";
+            /**
+             * INSERT YOUR PASSWORD
+             * FOR YOUR LOCAL MACHINE
+             * BELOW (String password:)
+             */
+            String password = "";
+            Scanner userName = new Scanner(System.in);
+            System.out.println("Enter Username:");
+            String username = userName.nextLine();
+            Scanner passWord = new Scanner(System.in);
+            System.out.println("Enter Password:");
+            String pass = passWord.nextLine();
+            Scanner firstName = new Scanner(System.in);
+            System.out.println("Enter First Name:");
+            String fName = firstName.nextLine();
+            Scanner lastName = new Scanner(System.in);
+            System.out.println("Enter Last Name:");
+            String lName = lastName.nextLine();
+            Scanner emailladdress = new Scanner(System.in);
+            System.out.println("Enter Email Address:");
+            String email = emailladdress.nextLine();
 
-        String hashedPass = toHexString(getSHA(pass));
+            String hashedPass = toHexString(getSHA(pass));
 
 
+            try {
+                conn = DriverManager.getConnection(url, user, password);
+                CallableStatement stmnt = conn.prepareCall("{call createUserAccount(?,?,?,?,?)}");
+                stmnt.setString(1, username);
+                stmnt.setString(2, hashedPass);
+                stmnt.setString(3, fName);
+                stmnt.setString(4, lName);
+                stmnt.setString(5, email);
+                stmnt.execute();
+                stmnt.close();
+                break;
+            } catch (SQLIntegrityConstraintViolationException e) {
+                System.out.println("Username is already taken. Please try again");
+                tries++;
+                if (tries == maxTries) {
+                    e.printStackTrace();
+                }
+            } catch (SQLException e) {
+                tries++;
+                if (tries == 0) {
+                    e.printStackTrace();
+                }
+            }
 
-        try {
-            conn = DriverManager.getConnection(url, user, password);
-            CallableStatement stmnt = conn.prepareCall("{call createUserAccount(?,?,?,?,?)}");
-            stmnt.setString(1, username);
-            stmnt.setString(2,hashedPass);
-            stmnt.setString(3,fName);
-            stmnt.setString(4, lName);
-            stmnt.setString(5, email);
-            stmnt.execute();
-            stmnt.close();
-
-        } catch (SQLException e){
-            e.printStackTrace();
         }
-
-
     }
 
 }
