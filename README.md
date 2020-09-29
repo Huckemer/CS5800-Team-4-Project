@@ -29,7 +29,7 @@
 
 `DELIMITER ;`
 
-## Starting the React App :
+## Starting the React App
 **In VS Code, type the commands below in the terminal**  
 **to stop the development server hit CTRL + C and confirm with Y**
 
