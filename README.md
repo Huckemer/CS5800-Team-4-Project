@@ -1,6 +1,6 @@
 # CS5800-Team-4-Project
 
-# mySQL
+# MySQL setup
 
 CREATE TABLE users (
 	username VARCHAR (25)  UNIQUE PRIMARY KEY,
@@ -12,6 +12,7 @@ CREATE TABLE users (
 
 
 DELIMITER //
+
 CREATE PROCEDURE createUserAccount (IN username VARCHAR(25), IN passwrd VARCHAR(256), IN firstName VARCHAR(20), IN lastName VARCHAR(20), IN Email VARCHAR(30))
 BEGIN 
 	INSERT INTO users (username, passwrd, firstName, lastName, Email) VALUES(username, passwrd, firstName, lastName, Email);
