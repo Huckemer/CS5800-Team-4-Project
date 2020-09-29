@@ -1,6 +1,6 @@
 # CS5800-Team-4-Project
 
-# MySQL setup
+## MySQL setup
 
 CREATE TABLE users (
 	username VARCHAR (25)  UNIQUE PRIMARY KEY,
@@ -29,9 +29,9 @@ END //
 
 DELIMITER ;
 
-# Starting the React App
-# In VS Code, type the commands below in the terminal
-# to stop the development server hit CTRL + C and confirm with Y
+## Starting the React App
+### In VS Code, type the commands below in the terminal
+### to stop the development server hit CTRL + C and confirm with Y
 
 cd frontend
 cd team-4-project
