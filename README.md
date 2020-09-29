@@ -2,9 +2,9 @@
 
 ## MySQL setup
 
-`CREATE TABLE users (
+`CREATE TABLE users (`
 	`username VARCHAR (25)  UNIQUE PRIMARY KEY,`
-    	`passwrd VARCHAR (256) NOT NULL,`
+  	`passwrd VARCHAR (256) NOT NULL,`
     	`firstName VARCHAR (20) NOT NULL,`
     	`lastName VARCHAR (20) NOT NULL,`
     	`Email VARCHAR (30) NOT NULL`
