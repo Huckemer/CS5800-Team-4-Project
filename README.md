@@ -30,8 +30,8 @@ END //
 DELIMITER ;
 
 ## Starting the React App
-** In VS Code, type the commands below in the terminal **
-** to stop the development server hit CTRL + C and confirm with Y **
+**In VS Code, type the commands below in the terminal**
+**to stop the development server hit CTRL + C and confirm with Y**
 
 cd frontend
 cd team-4-project
