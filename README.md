@@ -30,8 +30,13 @@
 `DELIMITER ;`
 
 ## Starting the React App
-**In VS Code, type the commands below in the terminal**  
+**In VS Code, type the command below in the terminal**  
 **to stop the development server hit CTRL + C and confirm with Y**
+**If in the root directory, run both commands, if in the frontend directory run the second**
 
 `cd frontend\team-4-project`  
 `npm start`
+
+**For first time setup, typing the command below should install all of the dependencies**
+
+`npm install`
