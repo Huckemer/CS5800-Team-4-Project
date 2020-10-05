@@ -1,0 +1,11 @@
+export const TORNADO = "#737373"; //GRAY
+export const HURRICANE = "#458429"; // DARK GREEN
+export const SEVERE_STORMS = "#ffd028"; //YELLOW
+export const FIRE = "#e43828"; //RED
+export const ICE_STORM = "#81fafc"; //TURQUOISE
+export const FLOOD = "#0028fb"; //DARK BLUE
+export const FREEZING = "#9855f4"; // GRAPE PUPLE
+export const EARTHQUAKE = "#ed6300"; //ORANGE
+export const SNOW = "#e987d7"; //PINK
+export const COSTAL_STORM = "#82f378"; //FLORA GREEN
+export const TYPHOON = "#974949"; //REDISH
