@@ -51,6 +51,7 @@ class MapBox extends Component {
     return (
       <div>
         <Map
+          // style={'mapbox://styles/mapbox/streets-v11'}
           style={"mapbox://styles/huckemer/ckfw2tzeu1g4x19kz38ssubu2"}
           className={"mapContainer"}
           center={[-98.5816684, 39.8283459]}
