@@ -10,6 +10,13 @@
     	`Email VARCHAR (30) NOT NULL`
 `);`
 
+CREATE TABLE scheduledRides(
+	rideID INT UNIQUE PRIMARY KEY,
+    pickupPoint VARCHAR (25) NOT NULL, 
+    pickupTime DATE NOT NULL,
+    dropoffPoint VARCHAR (25) NOT NULL,
+    dropoffTime TIME NOT NULL
+    );
 
 `DELIMITER //`
 

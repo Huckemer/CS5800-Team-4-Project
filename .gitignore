@@ -1,6 +1,7 @@
 
-.idea/workspace.xml
-.idea/dbnavigator.xml
-.idea/misc.xml
-.idea/libraries/mysql_connector_java_8_0_21.xml
-.idea/modules.xml
+backend/.env
+backend/node_modules
+mini-project/node_modules
+mini-project/.eslintcache
+mini-project/.eslintcache
+mini-project/.eslintcache
